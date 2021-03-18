@@ -1,0 +1,365 @@
+@import 'lib/vars';
+@import 'lib/mixins';
+@import 'lib/reboot';
+@import 'lib/fontawesome/font-awesome';
+@import 'lib/fontface';
+@import 'lib/keyframes';
+
+
+
+/** {
+  border: 1px solid pink;
+}*/
+
+html, body{
+height: 100%;
+width: 100%;
+
+
+
+}
+
+
+.juego{
+  display: grid;
+ grid-template-columns: repeat(7, 1fr);
+ grid-template-rows: repeat(6, 1fr);
+//padding: 2rem;  
+height: 100%;
+width: 100%;
+margin: auto;
+}
+.fondo{
+  grid-area: 1 / 1 / span 6 / span 7;
+width: 100%;
+height: 100%;
+margin: auto;
+//position: relative;
+z-index: 1;
+
+}
+
+
+
+
+//BOTON DE LA INFORMACION
+.grupoBoton{
+  grid-area:1 / 1 / span 1 / span 1;
+  //position: absolute;
+  margin: auto;
+  z-index: 2; 
+  width: 80px;
+  border: transparent;
+  background-color: transparent;
+}
+.botonInfo{
+width: 100%;
+}
+.grupoInstrucciones{
+  visibility: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+justify-content: center;
+align-items: center;
+z-index: 5;
+  .infoOverlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(16, 17, 16, 0.5);
+  }
+  .imgInfo{
+    z-index: 6;
+    width: 450px;
+    position: absolute;
+
+
+  }
+  &.opened{
+    visibility: visible;
+}
+}
+
+//NIVEL
+
+.nivel{
+  grid-area: 2 / 3 / span 1 / span 3;
+  //position: absolute;
+  z-index: 5;
+  margin: auto;
+  width: 150px;
+}
+
+
+//TEMPORIZADOR
+
+.grupoCrono{
+  grid-area: 1 / 3 / span 1 / span 3;
+  margin: auto;
+  //position: absolute;
+  z-index: 2; 
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.macetaCrono{
+  margin: auto;
+    position: relative;
+  height: 100%;
+  width: 100%;
+}
+.chronometer{
+
+  position: absolute;
+  z-index: 5;
+
+  margin: auto;
+  //position: absolute;
+  //top: 33%;
+  //right: 26%;
+  div{
+    color: white;
+    font-size: 25px;
+  }
+}
+
+
+
+
+//BOTON STOP
+.grupoStop{
+  grid-area: 2 / 4 / span 1 / span 1;
+  visibility: hidden;
+ // position: absolute;
+  z-index: 2; 
+  //top: 21%;
+  //right: 47.5%;
+  width: 100px;
+  margin: auto;
+}
+.botonStop{
+
+  height: 100%;
+  width: 100%;
+
+}
+.grupoStart{
+  grid-area:1 / 4 / span 1 / span 1;
+  margin: auto;
+  padding-top: 1rem;
+  //position: absolute;
+  z-index: 2; 
+  //top: 15%;
+  //right: 47.5%;
+  width: 100px;
+
+}
+.botonStart{
+  height: 100%;
+  width: 100%;
+
+}
+
+
+
+//MACETAS
+.maceta1{
+  grid-area:3 / 1 / span 2 / span 1;
+  margin: auto;
+  //position: absolute;
+  z-index: 2;
+  //right: 80%;
+  //top: 68%;
+  width: 200px;
+}
+
+.maceta2{
+  
+  grid-area:5 / 1 / span 2 / span 1;
+  margin: auto;
+  //position: absolute;
+  z-index: 2;
+  //right: 80%;
+  //top: 35%;
+  width: 200px;
+}
+
+.maceta3{
+  grid-area:3 / 7 / span 2 / span 1;
+  margin: auto;
+  //position: absolute;
+  z-index: 2;
+  //left: 80%;
+  //top: 35%;
+  width: 200px;
+}
+
+.maceta4{
+  grid-area:5 / 7 / span 2 / span 1;
+  margin: auto;
+  //position: absolute;
+  z-index: 2;
+  //left: 80%;
+  //top: 68%;
+  width: 200px; 
+}
+
+.maceta5{
+  grid-area:4 / 2 / span 2 / span 1;
+  margin: auto;
+  //position: absolute;
+  z-index: 2;
+  //left: 80%;
+  //top: 68%;
+  width: 200px; 
+}
+
+.maceta6{
+  grid-area:4 / 6 / span 2 / span 1;
+  margin: auto;
+  //position: absolute;
+  z-index: 2;
+  //left: 80%;
+  //top: 68%;
+  width: 200px; 
+}
+
+
+
+.flores{
+  position: absolute;
+
+}
+
+
+
+.grupoTierra{
+  padding-bottom: 2rem;
+  grid-area:3 / 3 / span 4 / span 3;
+  margin: auto;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+}
+.tierra{
+  margin: auto;
+  position: relative;
+  z-index: 3;
+  height: 100%;
+  width: 500px;
+  //position: absolute;
+ // left: 33%;
+  //top: 40%;
+}
+
+
+
+//CAJA DE LAS FLORES
+.grupoFlores{
+  position: absolute;
+  z-index: 4;
+  margin: auto;
+  background-color: transparent;
+  width: 70%;
+  height: 80%;
+  z-index:4;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  padding-right: 3rem;
+  padding-left: 3rem;
+}
+
+
+
+///FLORES 
+
+.margarita1{
+  margin: auto;
+  width: 45px;
+grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.tulipan1{
+  margin: auto;
+  width: 45px;
+grid-area: 2 / 1 / span 1 / span 1;
+}
+
+.hostensia1{
+  margin: auto;
+  width: 45px;
+grid-area: 2 / 1 / span 1 / span 1;
+
+}
+.calendula1{
+  margin: auto;
+  width: 45px;
+grid-area: 3 / 1 / span 1 / span 1;
+}
+
+.cosmos1{
+  margin: auto;
+  width: 45px;
+grid-area: 3 / 1 / span 1 / span 1;
+}
+
+.girasol1{
+  margin: auto;
+  width: 45px;
+grid-area: 1 / 2 / span 1 / span 1;
+}
+
+.calendula2{
+  margin: auto;
+  width: 45px;
+grid-area: 2 / 2 / span 1 / span 1;
+}
+
+.tulipan2{
+  margin: auto;
+  width: 45px;
+grid-area: 3 / 2 / span 1 / span 1;
+}
+
+.tulipan3{
+  margin: auto;
+  width: 45px;
+grid-area: 1 / 3 / span 1 / span 1;
+}
+
+.hostensia2{
+  margin: auto;
+  width: 45px;
+grid-area: 1 / 3 / span 1 / span 1;
+}
+
+
+.margarita2{
+  margin: auto;
+  width: 45px;
+grid-area: 2 / 3 / span 1 / span 1;
+}
+
+.cosmos2{
+  margin: auto;
+  width: 45px;
+grid-area: 2 / 3 / span 1 / span 1;
+}
+
+.girasol2{
+  margin: auto;
+  width: 45px;
+grid-area: 3 / 3 / span 1 / span 1;
+}
+
